@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Custom Front Page Generator</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Playfair+Display&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="controls">
+        <h2>Customize</h2>
+
+        <table class="controls-table">
+            <tr>
+                <td colspan="2"><input id="nameInput" placeholder="Name"></td>
+            </tr>
+            <tr>
+                <td>Title:</td>
+                <td>
+                    <div class="radio-group">
+                        <table>
+                            <tr>
+                                <td>
+                                    <input type="radio" name="labType" id="labReport" value="Lab Report" checked>
+                                </td>
+                                <td>
+                                    <label for="labReport">
+                                        Lab Report
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="radio" name="labType" id="labSheet" value="Lab Sheet">
+
+                                </td>
+                                <td>
+                                    <label for="labSheet">
+                                        Lab Sheet
+                                    </label>
+                                </td>
+                            </tr>
+                        </table>
+                                            
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Faculty:</label>
+                </td>
+                <td>
+                    <select id="facultyInput">
+                        <option value="BIT">BIT</option>
+                        <option value="BSc CSIT">CSIT</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Semester:</label>
+                </td>
+                <td>
+                    <select id="semesterInput">
+                        <option value="1" selected>1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Subject:</label>
+                </td>
+                <td>
+                    <select name="subjectInput" id="subjectInput">
+                        <option value="Mathematics">Mathematics</option>
+                        <option value="Introduction to Information Technology">IIT</option>
+                        <option value="C-Programming" selected>C-Programming</option>
+                        <option value="Digital Logic">Digital Logic</option>
+                        <option value="Sociology">Sociology</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Section:</label>
+                </td>
+                <td>
+                    <select name="sectionInput" id="sectionInput">
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Roll No.:</label>
+                </td>
+                <td>
+                    <input id="rollInput" type="number">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Teacher's Name:</label>
+                </td>
+                <td>
+                    <input id="teacherInput" placeholder="Teacher's Name">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Date:</label>
+                </td>
+                <td>
+                    <input id="dateInput" type="date">
+                </td>
+            </tr>
+        </table>
+
+        <button onclick="downloadPDF()">Download PDF</button>
+    </div>
+
+    <div class="preview-container">
+        <div class="preview">
+            <div id="template">
+                <div class="logo centerd"></div>
+
+                <h1 class="def-margin">Tribhuwan University</h1>
+
+                <h2 class="def-margin unbold">Institute of Science and Technology</h2>
+                
+                <div class="middle-lines"></div>
+
+                <h3 class="def-margin unbold">Department of <span class="faculty">BIT</span></h3>
+                
+                <h3 class="def-margin unbold">Bhaktapur Multiple Campus, Bhaktapur</h3>
+                
+                <h3 class="def-margin"><span id="lab-title">Lab Report</span> on</h3>
+                
+                <h3 class="def-margin"><span id="subject">Mathematics</span></h3>
+
+                <div class="table-div">
+                    <table class="preview-table">
+                        <tr>
+                            <td class="bold underlined">Submitted by:</td>
+                            <td class="bold underlined">Submitted to:</td>
+                        </tr>
+                        <tr>
+                            <td>Name: <span id="name">Your Name</span></td>
+                            <td id="teacher">Teacher's Name</td>
+                        </tr>
+                        <tr>
+                            <td>Roll No.: <span id="roll">00</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="faculty">BIT</span> (<span id="sem"></span><sup><span id="semSuffix"></span></sup> Sem)</td>
+                            <td>Signature: ________________</td>
+                        </tr>
+                        <tr>
+                            <td>Section: "<span id="section">A</span>"</td>
+                        </tr>
+                    </table>
+                </div>
+                <h3 class="unbold">Submission Date: <span id="date"></span></h3>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js">
+    </script>
+</body>
+</html>
