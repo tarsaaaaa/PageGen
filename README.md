@@ -6,12 +6,6 @@ No installs. No backend. Just fill, preview, and download 📄✨
 
 ---
 
-## 🌐 Live Demo
-
- https://customfrontpagegenerator.netlify.app/
-
----
-
 ## ✨ Features
 
 * 🧾 Generate professional assignment front pages
