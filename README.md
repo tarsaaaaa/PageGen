@@ -8,7 +8,7 @@ No installs. No backend. Just fill, preview, and download 📄✨
 
 ## 🌐 Live Demo
 
-👉 https://customfrontpagegenerator.netlify.app/
+ https://customfrontpagegenerator.netlify.app/
 
 ---
 
@@ -25,10 +25,11 @@ No installs. No backend. Just fill, preview, and download 📄✨
 
 ## 🚀 How to use
 
-1. Fill in your assignment details
-2. Choose the type (Lab Report / Lab Sheet)
-3. Preview updates instantly
-5. Download th page as PDF
+1. Goto 👉 https://customfrontpagegenerator.netlify.app/
+2. Fill in your assignment details
+3. Choose the type (Lab Report / Lab Sheet)
+4. Preview updates instantly
+5. Download page as PDF
 
 ---
 
