@@ -53,13 +53,13 @@ async function downloadPDF() {
     scale: 2
     });
 
-    const imgData = canvas.toDataURL("image/png");
+    const imgData = canvas.toDataURL("image/jpeg", 0.8);
 
     const pdf = new jsPDF("p", "mm", "a4");
 
     const width = 210;
     const height = 297;
 
-    pdf.addImage(imgData, "PNG", 0, 0, width, height);
+    pdf.addImage(imgData, "JPEG", 0, 0, width, height);
     pdf.save("custom-generated-front-page.pdf");
 }
